@@ -8,10 +8,12 @@
 import SwiftUI
 
 @main
-struct JustConverterApp: App {
+struct BLYADApp: App {
+    @State private var unit = Unit(unitType: .temperature(.celsius), value: 0)
+    @State private var outUnit = Unit(unitType: .temperature(.celsius), value: 0)
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(unit: $unit, outUnit: $outUnit)
         }
     }
 }
